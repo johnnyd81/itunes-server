@@ -24,6 +24,10 @@ app.use(helmet());
 //the line below represents the routes I imported from index.js
 app.use("/api", routes);
 
+app.get("/", (req, res) => {
+  res.send("Hello world");
+});
+
 //the route below makes a get request to the iTunes api with the term and type specified in the URL
 app.get(`/search/:term/:type`, (req, res) => {
   const term = req.params.term;
